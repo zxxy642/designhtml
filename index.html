@@ -224,7 +224,7 @@ body::before{
 .works-section .sec-label::after{background:var(--gray)}
 .works-section .sec-head{color:#fff}
 
-.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px;position:relative;z-index:1}
+.works-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px;position:relative;z-index:1}
 .work-card{
   background:var(--bg);color:var(--charcoal);cursor:pointer;border-radius:16px;
   transition:transform .4s var(--ease),box-shadow .4s var(--ease);
@@ -290,6 +290,10 @@ body::before{
   content:'';position:absolute;top:60px;left:60px;width:120px;height:120px;
   background:var(--blue);opacity:.06;pointer-events:none;z-index:0;
 }
+#project4::before{
+  content:'';position:absolute;bottom:80px;right:40px;width:150px;height:150px;
+  border:3px solid var(--blue);border-radius:50%;opacity:.2;pointer-events:none;z-index:0;
+}
 
 .project-meta{display:flex;gap:40px;margin-top:24px;flex-wrap:wrap;position:relative;z-index:1}
 .project-meta-item{display:flex;flex-direction:column;gap:6px}
@@ -300,8 +304,10 @@ body::before{
 #project1 .lbl{color:var(--blue)}
 #project2 .lbl{color:var(--blue)}
 #project3 .lbl{color:var(--blue)}
+#project4 .lbl{color:var(--blue)}
 .project-meta-item .val{font-size:.9rem;font-weight:500}
 #project2 .val{color:rgba(56,60,61,.65)}
+#project4 .val{color:rgba(56,60,61,.65)}
 
 .project-images{margin-top:56px;position:relative;z-index:1}
 .project-image-row{
@@ -520,6 +526,15 @@ body::before{
           <span class="work-card-arrow">查看详情 →</span>
         </div>
       </div>
+      <div class="work-card reveal reveal-d4" onclick="document.getElementById('project4').scrollIntoView({behavior:'smooth'})">
+        <div class="work-card-img"><img src="作品4/1.png" alt="" loading="lazy"></div>
+        <div class="work-card-body">
+          <p class="work-card-tag">作品四</p>
+          <h3 class="work-card-title">虚拟偶像游戏UI</h3>
+          <p class="work-card-desc">以"偶像"为灵感，采用粉紫主色调与蓝黄点缀，构建一套充满舞台灯光氛围的虚拟偶像养成游戏界面。</p>
+          <span class="work-card-arrow">查看详情 →</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -619,6 +634,39 @@ body::before{
   </div>
 </section>
 
+<!-- ====== PROJECT 4 ====== -->
+<section class="project-section" id="project4">
+  <div class="section-inner">
+    <p class="sec-label reveal">作品四</p>
+    <h2 class="sec-head reveal reveal-d1">虚拟偶像游戏UI</h2>
+    <p class="sec-body reveal reveal-d2" style="margin-top:18px;">
+      "偶像"带来的第一印象是舞台灯光，因此整体采用粉色与紫色为主色调，并辅以蓝色与黄色作为点缀，
+      营造虚拟偶像舞台的氛围。
+    </p>
+    <div class="project-meta reveal reveal-d3">
+      <div class="project-meta-item"><span class="lbl">项目类型</span><span class="val">虚拟偶像游戏UI</span></div>
+      <div class="project-meta-item"><span class="lbl">设计工具</span><span class="val">Illustrator / Figma</span></div>
+      <div class="project-meta-item"><span class="lbl">学期</span><span class="val">2026 春</span></div>
+      <div class="project-meta-item"><span class="lbl">角色</span><span class="val">UI 设计师</span></div>
+    </div>
+    <div class="reveal" style="margin-top:52px;">
+      <p class="sec-label">设计说明</p>
+      <p class="sec-body" style="max-width:700px;">
+        以虚拟偶像养成为主题，围绕舞台灯光展开设计。标题界面以紫色为主，加入星星点缀与音浪元素模拟现场欢呼；
+        结算界面设置人气榜与每日海报；直播界面参考官方模板，右侧属性球动态体现策略影响；
+        PK 界面以聚光灯与灯束营造对峙氛围，卡牌不规则摆放增强桌游感。角色立绘与插画来源于 muse dash。
+      </p>
+    </div>
+    <p class="sec-label reveal" style="margin-top:56px;">设计稿展示</p>
+    <div class="project-images">
+      <div class="project-image-row reveal reveal-d1"><img src="作品4/1.png" alt="" loading="lazy"></div>
+      <div class="project-image-row reveal reveal-d2"><img src="作品4/2.png" alt="" loading="lazy"></div>
+      <div class="project-image-row reveal reveal-d3"><img src="作品4/3.png" alt="" loading="lazy"></div>
+      <div class="project-image-row reveal reveal-d4"><img src="作品4/4.png" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ====== ABOUT ====== -->
 <section class="metrics-section" id="about">
   <div class="section-inner">
@@ -644,6 +692,7 @@ body::before{
       <a href="#project1" class="current">网页界面设计</a>
       <a href="#project2">游戏UI设计</a>
       <a href="#project3">APP界面设计</a>
+      <a href="#project4">虚拟偶像游戏UI</a>
     </div>
     <div class="footer-bottom reveal">
       <div>
@@ -677,12 +726,12 @@ body::before{
   /* Scroll-based menu active */
   window.addEventListener('scroll',function(){
     var y=window.scrollY,cur='home';
-    ['home','works','project1','project2','project3','about'].forEach(function(id){
+    ['home','works','project1','project2','project3','project4','about'].forEach(function(id){
       var el=document.getElementById(id);if(el&&y>=el.offsetTop-200)cur=id;
     });
-    var nc=(cur==='project1'||cur==='project2'||cur==='project3')?'project1':cur;
+    var nc=(cur==='project1'||cur==='project2'||cur==='project3'||cur==='project4')?'project1':cur;
     document.querySelectorAll('.menu-drop a').forEach(function(l){
-      if(l.getAttribute('href')==='#project1'&&(cur==='project1'||cur==='project2'||cur==='project3'))l.classList.add('active');
+      if(l.getAttribute('href')==='#project1'&&(cur==='project1'||cur==='project2'||cur==='project3'||cur==='project4'))l.classList.add('active');
       else l.classList.toggle('active',l.getAttribute('href')==='#'+nc);
     });
   });
